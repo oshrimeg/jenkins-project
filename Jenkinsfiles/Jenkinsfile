@@ -38,8 +38,10 @@ pipeline {
         stage('Deploy Application') {
             steps {
                 script {
-                    dir('flask-app')
-                    bat 'docker-compose -f docker-compose.yaml up -d --build'
+                    // Assuming 'flask-app' is a subdirectory of the workspace
+                    dir('flask-app') {
+                        bat 'docker-compose -f docker-compose.yaml up -d --build'
+                    }
                 }
             }
         }
