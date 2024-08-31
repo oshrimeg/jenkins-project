@@ -38,9 +38,8 @@ pipeline {
         stage('Deploy Application') {
             steps {
                 script {
-                dir('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\flask-app') {
-                    script {
-                        sh 'docker-compose -f docker-compose.yaml up -d --build'
+                    dir('flask-app')
+                    bat 'docker-compose -f docker-compose.yaml up -d --build'
                 }
             }
         }
