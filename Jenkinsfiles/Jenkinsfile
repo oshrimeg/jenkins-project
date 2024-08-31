@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_CREDENTIALS_ID = 'dockerhub-credentials'
-        DOCKER_IMAGE_NAME = 'oshrimeg/flask-contacts'
+        DOCKER_IMAGE_NAME = 'oshrimeg/flask-contacts-jenkins'
         DOCKER_REGISTRY = 'docker.io'
     }
 
