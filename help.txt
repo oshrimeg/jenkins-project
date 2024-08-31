@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clone the repository
+                git 'https://github.com/oshrimeg/flask-contacts-jenkins.git'
+                sh 'ls -l'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image with a tag
+                    sh 'docker build -t oshrimeg/flask-contacts-app:latest .'
+                    
+                }
+            }
+        }
+        stage('Push to DockerHub') {
+            steps {
+                script {
+                    // Push the Docker image to DockerHub
+                    sh "docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials')"
+                    sh 'docker.image("oshrimeg/flask-contacts-app:latest").push()'
+                }
+            }
+        }
+    }
+}
