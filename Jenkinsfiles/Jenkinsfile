@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/oshrimeg/flask-contacts-jenkins.git'
+                git 'https://github.com/oshrimeg/jenkins-project.git'
             }
         }
 
