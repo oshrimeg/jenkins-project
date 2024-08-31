@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_ID = 'your-dockerhub-credentials-id'
+        DOCKER_CREDENTIALS_ID = 'dockerhub-credentials'
         DOCKER_IMAGE_NAME = 'oshrimeg/flask-contacts'
         DOCKER_REGISTRY = 'docker.io'
     }
