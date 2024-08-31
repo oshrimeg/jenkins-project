@@ -2,7 +2,7 @@ version: '3'
 
 services:
   my-app:
-    image: oshrimeg/flask-contacts-app:latest
+    image: oshrimeg/jenkins-project:latest
     ports:
       - "5000:5000"  
     environment:
