@@ -5,6 +5,7 @@ pipeline {
         DOCKER_CREDENTIALS_ID = 'dockerhub-credentials'
         DOCKER_IMAGE_NAME = 'oshrimeg/jenkins-project'
         DOCKER_REGISTRY = 'docker.io'
+        BUILD_ID = 'Latest'
     }
 
     stages {
@@ -17,7 +18,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE_NAME}:${env.BUILD_ID}")
+                    docker.build("${DOCKER_IMAGE_NAME}:${BUILD_ID}")
                 }
             }
         }
@@ -26,7 +27,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry("https://${DOCKER_REGISTRY}", "${DOCKER_CREDENTIALS_ID}") {
-                        docker.image("${DOCKER_IMAGE_NAME}:${env.BUILD_ID}").push('latest')
+                        docker.push("${DOCKER_IMAGE_NAME}:${BUILD_ID}")
                         // docker.image("${DOCKER_IMAGE_NAME}:${env.BUILD_ID}").push("${env.BUILD_ID}")
                     }
                 }
