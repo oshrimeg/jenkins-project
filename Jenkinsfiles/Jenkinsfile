@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     bat '''
-                    docker-compose -f C:\ProgramData\Jenkins\.jenkins\workspace\flask-app\docker-compose.yaml up -d --build
+                    docker-compose -f docker-compose.yaml up -d --build
                     '''
                 }
             }
