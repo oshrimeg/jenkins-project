@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_CREDENTIALS_ID = 'dockerhub-credentials'
         DOCKER_IMAGE_NAME = 'oshrimeg/jenkins-project'
-        DOCKER_REGISTRY = 'hub.docker'
+        DOCKER_REGISTRY = 'docker.io'
     }
 
     stages {
