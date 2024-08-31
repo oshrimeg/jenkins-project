@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/fullstackjava082023/FLASK-CONTACTS-DEVOPS.git'
+                git 'https://github.com/oshrimeg/flask-contacts-jenkins.git'
             }
         }
 
