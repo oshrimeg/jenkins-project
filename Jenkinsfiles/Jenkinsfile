@@ -38,7 +38,7 @@ pipeline {
         stage('Deploy Application') {
             steps {
                 script {                   
-                    bat 'docker-compose -f docker-compose.yaml up --build'
+                    bat 'docker-compose up --build'
                 }
             }
         }
