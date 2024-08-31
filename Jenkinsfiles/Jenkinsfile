@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry("https://${DOCKER_REGISTRY}", "${DOCKER_CREDENTIALS_ID}") {
-                        docker.push("${DOCKER_IMAGE_NAME}:${BUILD_ID}")
+                        docker.image("${DOCKER_IMAGE_NAME}:${BUILD_ID}").push('latest')
                         // docker.image("${DOCKER_IMAGE_NAME}:${env.BUILD_ID}").push("${env.BUILD_ID}")
                     }
                 }
